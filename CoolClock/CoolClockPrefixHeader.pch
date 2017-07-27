@@ -1,0 +1,52 @@
+//
+//  CoolClockPrefixHeader.pch
+//  CoolClock
+//
+//  Created by socoolby on 20/06/2017.
+//  Copyright © 2017 YZXZYH. All rights reserved.
+//
+
+#ifndef CoolClockPrefixHeader_pch
+#define CoolClockPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* CoolClockPrefixHeader_pch */
+
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_RETINA ([[UIScreen mainScreen] scale]>=2.0)
+
+#define SCREEN_SCALE [UIScreen mainScreen].scale
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define RGBColor(r,g,b)     [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+#define RGBAColor(r,g,b,a)  [UIColor colorWithRed:r/256.0 green:g/256.0 blue:b/256.0 alpha:a]
+#define RGBColorC(c)        RGBColor((((int)c) >> 16),((((int)c) >> 8) & 0xff),(((int)c) & 0xff))
+#define RGBAColorC(c)        RGBAColor( ((((long)c) >> 16) & 0xff), ((((long)c) >> 8) & 0xff), (((long)c) & 0xff), ((((long)c) >> 32) & 0xff))
+
+#define isRetina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? 640.0 == [[UIScreen mainScreen] currentMode].size.width : NO)
+#define isSimulator (NSNotFound != [[[UIDevice currentDevice] model] rangeOfString:@"Simulator"].location)
+
+#define IS_IPHONE_4_OR_LESS (SCREEN_HEIGHT <568.0)
+#define IS_IPHONE_5 (SCREEN_HEIGHT == 568.0)
+#define IS_IPHONE_6 (SCREEN_HEIGHT == 667.0)
+#define IS_IPHONE_6P (SCREEN_HEIGHT ==736.0)
+
+#define IS_IPHONE_SHORT (SCREEN_HEIGHT<667.0)
+
+#define PERFERENCE_TICK @"PREFERENCE_Tick"
+#define PERFERENCE_MOTTO @"PREFERENCE_Motto"
+#define PERFERENCE_TIME_REPORT_TYPE @"PREFERENCE_TimeReportType"
+#define TR_HALF_AN_HOUR 0
+#define TR_HOURS 1
+#define TR_NO_REPORT 2
+#define PERFERENCE_CITY @"PERFERENCE_City"
+#define PERFERENCE_PROVINCE @"PERFERENCE_Province"
+#define PERFERENCE_TIMEREPORT_START @"PERFERENCE_TimeReport_start"
+#define PERFERENCE_TIMEREPORT_END @"PERFERENCE_TimeReport_end"
+
+
+
